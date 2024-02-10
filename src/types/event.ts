@@ -1,0 +1,1 @@
+export type MyEvent = React.MouseEvent<HTMLButtonElement, MouseEvent>
