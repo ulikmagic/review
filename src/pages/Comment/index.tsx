@@ -1,5 +1,5 @@
 import CommentIcon from '@/assets/icons/comment.svg'
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import ArrowBtn from '@/components/UI/ArrowBtn'
 import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { changeComment, saveReviewData } from '@/store/features/review.slice'

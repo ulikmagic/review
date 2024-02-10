@@ -8,7 +8,6 @@ import AuthModal from './components/AuthModal'
 import Burger from '@/components/UI/Burger'
 import { setIsAuth } from '@/store/features/admin.slice'
 import Menu from './components/Menu'
-import clsx from 'clsx'
 
 const defaultState = {
 	feelingsBeforeMary: 0,
