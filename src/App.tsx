@@ -19,13 +19,17 @@ const App: FC = () => {
 
 	useEffect(() => {
 		const data = LocalStorage.getData('review')
-		if (data) dispatch(saveReviewData(data))
-	}, [])
+		if (data) {
+			dispatch(saveReviewData(data))
+		}
+	}, [dispatch])
 
 	useEffect(() => {
 		const isAuth = LocalStorage.getData('isAuth')
-		if (isAuth) dispatch(setIsAuth(true))
-	}, [])
+		if (isAuth) {
+			dispatch(setIsAuth(true))
+		}
+	}, [dispatch])
 	return (
 		<div>
 			{isLoader && (
