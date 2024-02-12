@@ -1,15 +1,18 @@
-import CommentIcon from '@/assets/icons/comment.svg'
+import CommentIcon from '../../assets/icons/comment.svg'
 import { FC } from 'react'
-import ArrowBtn from '@/components/UI/ArrowBtn'
-import { useAppDispatch, useAppSelector } from '@/store/hooks'
-import { changeComment, saveReviewData } from '@/store/features/review.slice'
-import { LocalStorage } from '@/utils/localStorage'
-import AsksImage from '@/assets/images/asks.svg'
-import { IComment } from '@/types/api'
-import { getRandomName } from '@/constants/names'
-import { addReview } from '@/utils/api'
-import { initialState as defaultReviewState } from '@/store/features/review.slice'
-import CheckReviewComponent from '@/components/CommentReview/CheckReview'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
+import { LocalStorage } from '../../utils/localStorage'
+import {
+	changeComment,
+	saveReviewData,
+	initialState as defaultReviewState,
+} from '../../store/features/review.slice'
+import { IComment } from '../../types/api'
+import { getRandomName } from '../../constants/names'
+import { addReview } from '../../utils/api'
+import CheckReviewComponent from '../../components/CheckReview'
+import ArrowBtn from '../../components/UI/ArrowBtn'
+import AsksImage from '../../assets/images/asks.svg'
 
 const Comment: FC = () => {
 	const { comment, ...review } = useAppSelector(state => state.review)

@@ -1,10 +1,10 @@
-import Loader from '@/components/UI/Loader'
-import Popup from '@/components/UI/Popup'
-import { IComment } from '@/types/api'
-import { deleteReview, getReviewList } from '@/utils/api'
 import { FC, useEffect, useState } from 'react'
 import List from './components/List'
-import CommentReview from '@/components/CommentReview'
+import { IComment } from '../../types/api'
+import { deleteReview, getReviewList } from '../../utils/api'
+import Popup from '../../components/UI/Popup'
+import CommentReview from '../../components/CommentReview'
+import Loader from '../../components/UI/Loader'
 
 const ReviewList: FC = () => {
 	const [modalComment, setModalComment] = useState<string | number | null>(null)

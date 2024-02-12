@@ -1,13 +1,13 @@
-import { useAppDispatch, useAppSelector } from '@/store/hooks'
 import { FC } from 'react'
-import Variant from './components/Variant/Variant'
-import { changeFeelingsBeforeMary } from '@/store/features/review.slice'
-import { feelings } from '@/constants/feelings'
+import Variant from './components/Variant'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
+import { LocalStorage } from '../../utils/localStorage'
 import Carousel from 'better-react-carousel'
-import AsksImage from '@/assets/images/asks.svg'
-import ArrowBtn from '@/components/UI/ArrowBtn'
+import { feelings } from '../../constants/feelings'
 import clsx from 'clsx'
-import { LocalStorage } from '@/utils/localStorage'
+import ArrowBtn from '../../components/UI/ArrowBtn'
+import { changeFeelingsBeforeMary } from '../../store/features/review.slice'
+import AsksImage from '../../assets/images/asks.svg'
 
 const responsive = [
 	{

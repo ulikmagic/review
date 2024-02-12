@@ -1,6 +1,6 @@
-import { DB } from "@/constants/firebase";
-import { IComment } from "@/types/api";
 import { child, get, push, ref, remove, update } from "firebase/database";
+import { DB } from "../constants/firebase";
+import { IComment } from "../types/api";
 
 const parseData = (data: any) =>
   Object.keys(data)

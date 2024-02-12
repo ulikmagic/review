@@ -1,10 +1,10 @@
-import { setIsAuth } from '@/store/features/admin.slice'
-import { setIsLoader } from '@/store/features/loader.slice'
-import { useAppDispatch } from '@/store/hooks'
-import { LocalStorage } from '@/utils/localStorage'
 import clsx from 'clsx'
 import { FC, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAppDispatch } from '../../../store/hooks'
+import { setIsLoader } from '../../../store/features/loader.slice'
+import { setIsAuth } from '../../../store/features/admin.slice'
+import { LocalStorage } from '../../../utils/localStorage'
 
 interface AuthModalProps {
 	close: () => void

@@ -1,11 +1,11 @@
 import clsx from 'clsx'
 import { FC } from 'react'
-import ExitIcon from '@/assets/icons/exit.svg'
-import CommentIcon from '@/assets/icons/comment.svg'
-import RefreshIcon from '@/assets/icons/refresh.svg'
-import AdminIcon from '@/assets/icons/admin.svg'
+import ExitIcon from '../../../assets/icons/exit.svg'
+import CommentIcon from '../../../assets/icons/comment.svg'
+import RefreshIcon from '../../../assets/icons/refresh.svg'
+import AdminIcon from '../../../assets/icons/admin.svg'
 import { NavLink } from 'react-router-dom'
-import { useAppSelector } from '@/store/hooks'
+import { useAppSelector } from '../../../store/hooks'
 
 interface MenuProps {
 	isMenu: boolean

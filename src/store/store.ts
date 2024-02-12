@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import reviewReducer from '@/store/features/review.slice'
-import adminReducer from '@/store/features/admin.slice'
-import loaderReducer from '@/store/features/loader.slice'
+import reviewReducer from './features/review.slice'
+import adminReducer from './features/admin.slice'
+import loaderReducer from './features/loader.slice'
 
 
 export const store = configureStore({

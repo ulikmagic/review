@@ -1,7 +1,7 @@
-import { feelings } from '@/constants/feelings'
-import { IComment } from '@/types/api'
 import { FC } from 'react'
-import StarIcon from '@/assets/icons/stars.svg?react'
+import { feelings } from '../../constants/feelings'
+import { Star } from '../UI/Icons'
+import { IComment } from '../../types/api'
 
 interface CommentReviewProps {
 	close: () => void
@@ -37,7 +37,7 @@ const CommentReview: FC<CommentReviewProps> = ({ close, review }) => {
 						<p className='text-md font-poppins'>
 							{review.professionalismRating}/
 						</p>
-						<StarIcon className='text-yellow w-5 h-5' />
+						<Star className='text-yellow w-5 h-5' />
 					</div>
 				</div>
 				<div className='flex items-center gap-2'>
@@ -48,7 +48,7 @@ const CommentReview: FC<CommentReviewProps> = ({ close, review }) => {
 						<p className='text-md font-poppins'>
 							{review.comfortLevelWithMary}/
 						</p>
-						<StarIcon className='text-yellow w-5 h-5' />
+						<Star className='text-yellow w-5 h-5' />
 					</div>
 				</div>
 				<div className='h-0.5 w-full bg-dark-blue' />

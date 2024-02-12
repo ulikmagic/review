@@ -1,8 +1,8 @@
-import { changeComfortLevelWithMary } from '@/store/features/review.slice'
-import { useAppDispatch, useAppSelector } from '@/store/hooks'
-import Rating from '@/components/Rating/Rating'
-import { LocalStorage } from '@/utils/localStorage'
-import CheckReviewComponent from '@/components/CommentReview/CheckReview'
+import CheckReviewComponent from '../../components/CheckReview'
+import Rating from '../../components/Rating'
+import { changeComfortLevelWithMary } from '../../store/features/review.slice'
+import { useAppDispatch, useAppSelector } from '../../store/hooks'
+import { LocalStorage } from '../../utils/localStorage'
 
 const ComfortLevel = () => {
 	const dispatch = useAppDispatch()

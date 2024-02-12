@@ -1,8 +1,8 @@
-import FrownIcon from '@/assets/icons/frown.svg'
-import HappyIcon from '@/assets/icons/happy.svg'
-import NeutralIcon from '@/assets/icons/neutral.svg'
-import SadnessIcon from '@/assets/icons/sadness.svg'
-import SmirkIcon from '@/assets/icons/smirk.svg'
+import FrownIcon from '../assets/icons/frown.svg'
+import HappyIcon from '../assets/icons/happy.svg'
+import NeutralIcon from '../assets/icons/neutral.svg'
+import SadnessIcon from '../assets/icons/sadness.svg'
+import SmirkIcon from '../assets/icons/smirk.svg'
 
 export interface IFeeling {
   id: number

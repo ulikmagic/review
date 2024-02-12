@@ -1,13 +1,13 @@
-import { useAppDispatch } from '@/store/hooks'
-import { saveReviewData } from '@/store/features/review.slice'
-import { LocalStorage } from '@/utils/localStorage'
-import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import Popup from '@/components/UI/Popup'
-import AuthModal from './components/AuthModal'
-import Burger from '@/components/UI/Burger'
-import { setIsAuth } from '@/store/features/admin.slice'
+import { useAppDispatch } from '../../store/hooks'
+import { useNavigate } from 'react-router-dom'
+import { saveReviewData } from '../../store/features/review.slice'
+import { LocalStorage } from '../../utils/localStorage'
+import { setIsAuth } from '../../store/features/admin.slice'
+import Burger from '../UI/Burger'
+import Popup from '../UI/Popup'
 import Menu from './components/Menu'
+import AuthModal from './components/AuthModal'
 
 const defaultState = {
 	feelingsBeforeMary: 0,

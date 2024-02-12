@@ -1,9 +1,9 @@
-import { feelings } from '@/constants/feelings'
-import { useAppSelector } from '@/store/hooks'
-import { IComment } from '@/types/api'
-import { MyEvent } from '@/types/event'
 import { FC } from 'react'
-import DeleteIcon from '@/assets/icons/delete.svg'
+import DeleteIcon from '../../../assets/icons/delete.svg'
+import { IComment } from '../../../types/api'
+import { useAppSelector } from '../../../store/hooks'
+import { feelings } from '../../../constants/feelings'
+import { MyEvent } from '../../../types/event'
 
 interface ListProps {
 	list: IComment[]

@@ -1,4 +1,4 @@
-import { IReview } from "@/store/features/review.slice";
+import { IReview } from "../store/features/review.slice"
 
 export interface IComment extends IReview {
   name: string

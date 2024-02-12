@@ -1,6 +1,6 @@
-import { IFeeling } from '@/constants/feelings'
 import clsx from 'clsx'
 import { FC } from 'react'
+import { IFeeling } from '../../../constants/feelings'
 
 interface VariantProps extends IFeeling {
 	onClick: () => void

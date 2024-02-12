@@ -1,8 +1,8 @@
 import { FC, useState } from 'react'
-import PsychologyImage from '@/assets/images/psychology.svg'
-import StarIcon from '@/assets/icons/stars.svg?react'
-import ArrowBtn from '@/components/UI/ArrowBtn'
+import PsychologyImage from '../../assets/images/psychology.svg'
 import clsx from 'clsx'
+import ArrowBtn from '../UI/ArrowBtn'
+import { Star } from '../UI/Icons'
 
 interface RatingProps {
 	title: string
@@ -40,7 +40,7 @@ const Rating: FC<RatingProps> = ({ title, path, answer, setAnswer }) => {
 								onMouseLeave={() => setHoverStar(0)}
 								onClick={() => setAnswer(star)}
 							>
-								<StarIcon
+								<Star
 									className={clsx(
 										'w-7 h-7',
 										duration[idx],
