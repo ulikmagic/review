@@ -13,7 +13,6 @@ import { addReview } from '../../utils/api'
 import CheckReviewComponent from '../../components/CheckReview'
 import ArrowBtn from '../../components/UI/ArrowBtn'
 import AsksImage from '../../assets/images/asks.svg'
-
 const Comment: FC = () => {
 	const { comment, ...review } = useAppSelector(state => state.review)
 	const dispatch = useAppDispatch()
