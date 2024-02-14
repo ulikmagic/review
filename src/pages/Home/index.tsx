@@ -8,6 +8,7 @@ import clsx from 'clsx'
 import ArrowBtn from '../../components/UI/ArrowBtn'
 import { changeFeelingsBeforeMary } from '../../store/features/review.slice'
 import AsksImage from '../../assets/images/asks.svg'
+import { Languages } from '../../types/language'
 
 const responsive = [
 	{
@@ -29,6 +30,7 @@ const Home: FC = () => {
 	const feelingsBeforeMary = useAppSelector(
 		state => state.review.feelingsBeforeMary
 	)
+	const language = useAppSelector(state => state.language.language)
 
 	const setAnswer = (answer: number) => {
 		const review = LocalStorage.getData('review') || {}
@@ -51,7 +53,7 @@ const Home: FC = () => {
 			/>
 			<div className='overflow-hidden min-h-[265px] text-center py-4'>
 				<h1 className='container mb-3 text-white drop-shadow-md font-rubik font-semibold text-lg'>
-					Как вы чувствовали себя до работы с психологом Мэри?
+					{language === Languages.ru ? 'Как изменилось ваше психическое состояние во время/после работы с Мэри?' : 'How did your mental state change during/after working with Mary?'}
 				</h1>
 				<div onClick={handleClick}>
 					<Carousel
@@ -64,6 +66,7 @@ const Home: FC = () => {
 								<Variant
 									{...item}
 									onClick={() => setAnswer(item.id)}
+									language={language}
 									className={clsx(
 										feelingsBeforeMary === item.id &&
 											'border border-2 border-dark-blue'

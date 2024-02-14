@@ -2,12 +2,13 @@ import CheckReviewComponent from '../../components/CheckReview'
 import Rating from '../../components/Rating'
 import { changeProfessionalismRating } from '../../store/features/review.slice'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
+import { Languages } from '../../types/language'
 import { LocalStorage } from '../../utils/localStorage'
 
 const Professionalism = () => {
 	const dispatch = useAppDispatch()
-	const professionalismRating = useAppSelector(
-		state => state.review.professionalismRating
+	const { review, language } = useAppSelector(
+		state => state
 	)
 
 	const setData = (answer: number) => {
@@ -21,9 +22,9 @@ const Professionalism = () => {
 		<>
 			<CheckReviewComponent />
 			<Rating
-				title='Оцените профессионализм психолога'
+				title={language.language === Languages.ru ? 'Оцените профессионализм психолога' : 'Rate professional qualities of the psychologist'}
 				path='/comfort-level'
-				answer={professionalismRating}
+				answer={review.professionalismRating}
 				setAnswer={answer => setData(answer)}
 			/>
 		</>

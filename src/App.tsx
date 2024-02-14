@@ -12,6 +12,8 @@ import { setIsAuth } from './store/features/admin.slice'
 import { saveReviewData } from './store/features/review.slice'
 import Loader from './components/UI/Loader'
 import Popup from './components/UI/Popup'
+import { Languages } from './types/language'
+import { changeLanguage } from './store/features/language.slice'
 
 const App: FC = () => {
 	const dispatch = useAppDispatch()
@@ -28,6 +30,13 @@ const App: FC = () => {
 		const isAuth = LocalStorage.getData('isAuth')
 		if (isAuth) {
 			dispatch(setIsAuth(true))
+		}
+	}, [dispatch])
+
+	useEffect(() => {
+		const language: Languages | null = LocalStorage.getData('language')
+		if(language) {
+			dispatch(changeLanguage(language))
 		}
 	}, [dispatch])
 	return (

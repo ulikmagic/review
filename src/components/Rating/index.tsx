@@ -30,7 +30,7 @@ const Rating: FC<RatingProps> = ({ title, path, answer, setAnswer }) => {
 				className='absolute top-20 z-[-1] left-1/2 transform -translate-x-1/2 w-full'
 			/>
 			<div className='container h-[170px]'>
-				<div className='border w-11/12 m-auto bg-white shadow-variant py-6 text-center rounded-md'>
+				<div className='border w-11/12 m-auto bg-white shadow-variant py-6 text-center rounded-md px-2'>
 					<h1 className='text-lg font-bold text-dark-blue mb-3'>{title}</h1>
 					<ul className='flex gap-2 justify-center'>
 						{numStars.map((star, idx) => (

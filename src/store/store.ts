@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import reviewReducer from './features/review.slice'
 import adminReducer from './features/admin.slice'
 import loaderReducer from './features/loader.slice'
+import languageReducer from './features/language.slice'
 
 
 export const store = configureStore({
@@ -9,6 +10,7 @@ export const store = configureStore({
     review: reviewReducer,
     admin: adminReducer,
     loader: loaderReducer,
+    language: languageReducer
   },
   devTools: true
 })

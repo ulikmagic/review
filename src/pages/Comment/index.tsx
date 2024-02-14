@@ -13,8 +13,10 @@ import { addReview } from '../../utils/api'
 import CheckReviewComponent from '../../components/CheckReview'
 import ArrowBtn from '../../components/UI/ArrowBtn'
 import AsksImage from '../../assets/images/asks.svg'
+import { Languages } from '../../types/language'
 const Comment: FC = () => {
 	const { comment, ...review } = useAppSelector(state => state.review)
+	const language = useAppSelector(state => state.language.language)
 	const dispatch = useAppDispatch()
 
 	const setData = (text: string) => {
@@ -47,12 +49,12 @@ const Comment: FC = () => {
 			<CheckReviewComponent />
 			<img src={AsksImage} className='absolute top-0 z-[-1]' alt='asks' />
 			<div className='container z-10'>
-				<div className='bg-white shadow-variant w-full min-h-[280px] rounded-md relative flex items-center flex-col pt-14 pb-6'>
+				<div className='bg-white px-2 shadow-variant w-full min-h-[280px] rounded-md relative flex items-center flex-col pt-14 pb-6'>
 					<div className='absolute right-3 top-3'>
 						<img src={CommentIcon} alt='comment' className='w-10 mr-0' />
 					</div>
 					<h1 className='text-lg font-rubik font-medium text-dark-blue mb-3 text-center'>
-						Оставьте комментарий
+						{language === Languages.ru ? 'Пожалуйста, оставьте душевный отзыв' : 'Please, leave a soulful review'}
 					</h1>
 					<p className='font-poppins mb-1'>
 						<span>{comment?.length || 0}</span>/300

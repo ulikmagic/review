@@ -6,6 +6,7 @@ import RefreshIcon from '../../../assets/icons/refresh.svg'
 import AdminIcon from '../../../assets/icons/admin.svg'
 import { NavLink } from 'react-router-dom'
 import { useAppSelector } from '../../../store/hooks'
+import { Languages } from '../../../types/language'
 
 interface MenuProps {
 	isMenu: boolean
@@ -23,6 +24,7 @@ const Menu: FC<MenuProps> = ({
 	logout,
 }) => {
 	const isAuth = useAppSelector(state => state.admin.isAuth)
+	const language = useAppSelector(state => state.language.language)
 	return (
 		<div
 			className={clsx(
@@ -41,7 +43,7 @@ const Menu: FC<MenuProps> = ({
 							<img className='w-7' src={RefreshIcon} alt='refresh' />
 						</div>
 						<p className='text-dark-blue font-medium font-poppins'>
-							Вернуться в начало
+							{language === Languages.ru ? 'Вернуться в начало' : 'Return to start'}
 						</p>
 					</NavLink>
 				</li>
@@ -55,7 +57,7 @@ const Menu: FC<MenuProps> = ({
 							<img className='w-7' src={CommentIcon} alt='comment' />
 						</div>
 						<p className='text-dark-blue font-medium font-poppins'>
-							Список отзывов
+							{language === Languages.ru ? 'Список отзывов' : 'List of reviews'}
 						</p>
 					</NavLink>
 				</li>
@@ -65,7 +67,7 @@ const Menu: FC<MenuProps> = ({
 							<img src={AdminIcon} alt='admin' className='w-7' />
 						</div>
 						<p className='text-dark-blue font-medium font-poppins'>
-							Авторизация
+							{language === Languages.ru ? 'Авторизация' : 'Login'}
 						</p>
 					</li>
 				)}
@@ -74,7 +76,7 @@ const Menu: FC<MenuProps> = ({
 						<div className='w-8'>
 							<img src={ExitIcon} alt='admin' className='w-7' />
 						</div>
-						<p className='text-dark-blue font-medium font-poppins'>Выйти</p>
+						<p className='text-dark-blue font-medium font-poppins'>{language === Languages.ru ? 'Выйти' : 'Exit'}</p>
 					</li>
 				)}
 			</ul>

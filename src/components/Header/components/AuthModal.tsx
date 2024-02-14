@@ -1,10 +1,11 @@
 import clsx from 'clsx'
 import { FC, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAppDispatch } from '../../../store/hooks'
+import { useAppDispatch, useAppSelector } from '../../../store/hooks'
 import { setIsLoader } from '../../../store/features/loader.slice'
 import { setIsAuth } from '../../../store/features/admin.slice'
 import { LocalStorage } from '../../../utils/localStorage'
+import { Languages } from '../../../types/language'
 
 interface AuthModalProps {
 	close: () => void
@@ -27,6 +28,7 @@ const AuthModal: FC<AuthModalProps> = ({ close }) => {
 	const [form, setForm] = useState<IForm>({ username: '', password: '' })
 	const dispatch = useAppDispatch()
 	const navigate = useNavigate()
+	const language = useAppSelector(state => state.language.language)
 
 	const isDisabled = Object.values(form).some(text => text.length <= 2)
 
@@ -60,11 +62,11 @@ const AuthModal: FC<AuthModalProps> = ({ close }) => {
 				&#10006;
 			</button>
 			<h1 className='text-lg font-poppins font-bold text-dark-blue mt-2'>
-				Админка для Мэры
+				{language === Languages.ru ? 'Админка для Мэры' : 'Admin for Mary'}
 			</h1>
 			<div className='flex flex-col gap-3 mt-3'>
 				<div>
-					<label className={labelClass}>Логин</label>
+					<label className={labelClass}>{language === Languages.ru ? 'Логин' : 'Username'}</label>
 					<input
 						type='text'
 						value={form.username}
@@ -73,7 +75,7 @@ const AuthModal: FC<AuthModalProps> = ({ close }) => {
 					/>
 				</div>
 				<div>
-					<label className={labelClass}>Пароль</label>
+					<label className={labelClass}>{language === Languages.ru ? 'Пароль' : 'Password'}</label>
 					<input
 						type='password'
 						className={inputClass}
@@ -89,7 +91,7 @@ const AuthModal: FC<AuthModalProps> = ({ close }) => {
 						isDisabled ? 'bg-white-orange' : 'bg-orange'
 					)}
 				>
-					Войти
+					{language === Languages.ru ? 'Войти' : 'Sign-in'}
 				</button>
 			</div>
 		</div>

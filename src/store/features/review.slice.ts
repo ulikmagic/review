@@ -8,7 +8,7 @@ export interface IReview {
 }
 
 export const initialState: IReview = {
-  feelingsBeforeMary: 0, // Как вы чувствовали себя до работы с психологом Мэри?
+  feelingsBeforeMary: 0, // Как изменилось ваше психическое состояние во время/после работы с Мэри?
   professionalismRating: 0, // Оцените профессионализм психолога
   comfortLevelWithMary: 0, // Насколько комфортно вы чувствовали себя в работе с Мэри?
   comment: ""

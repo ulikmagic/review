@@ -8,13 +8,13 @@ export interface IFeeling {
   id: number
   text: string
   emoji: string
+  english_text: string
 }
 
 export const feelings: IFeeling[] = [
-  { id: 1, text: 'хуже, чем до сессии', emoji: FrownIcon },
-  { id: 2, text: 'также как и до сессии', emoji: HappyIcon },
-  { id: 3, text: 'нейтрально', emoji: NeutralIcon },
-  { id: 4, text: 'лучше', emoji: SadnessIcon },
-  { id: 5, text: 'значительно лучше', emoji: SmirkIcon },
-  { id: 6, text: 'отлично!', emoji: SmirkIcon },
+  { id: 1, text: 'стало хуже', english_text: 'It got worse', emoji: SadnessIcon },
+  { id: 2, text: '⁠осталось таким же', english_text: 'Remained the same', emoji: NeutralIcon },
+  { id: 3, text: 'не готов отвечать на это вопрос', english_text: '⁠Not ready to answer', emoji: FrownIcon },
+  { id: 4, text: 'стало лучше', english_text: '⁠Somewhat better', emoji: HappyIcon },
+  { id: 5, text: 'стало значительно лучше', english_text: '⁠Significantly better', emoji: SmirkIcon },
 ]
