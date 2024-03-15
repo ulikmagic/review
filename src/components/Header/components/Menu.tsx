@@ -43,24 +43,30 @@ const Menu: FC<MenuProps> = ({
 							<img className='w-7' src={RefreshIcon} alt='refresh' />
 						</div>
 						<p className='text-dark-blue font-medium font-poppins'>
-							{language === Languages.ru ? 'Вернуться в начало' : 'Return to start'}
+							{language === Languages.ru
+								? 'Вернуться в начало'
+								: 'Return to start'}
 						</p>
 					</NavLink>
 				</li>
-				<li>
-					<NavLink
-						to='/review-list'
-						onClick={closeMenu}
-						className='flex items-center gap-1'
-					>
-						<div className='w-8'>
-							<img className='w-7' src={CommentIcon} alt='comment' />
-						</div>
-						<p className='text-dark-blue font-medium font-poppins'>
-							{language === Languages.ru ? 'Список отзывов' : 'List of reviews'}
-						</p>
-					</NavLink>
-				</li>
+				{isAuth && (
+					<li>
+						<NavLink
+							to='/review-list'
+							onClick={closeMenu}
+							className='flex items-center gap-1'
+						>
+							<div className='w-8'>
+								<img className='w-7' src={CommentIcon} alt='comment' />
+							</div>
+							<p className='text-dark-blue font-medium font-poppins'>
+								{language === Languages.ru
+									? 'Список отзывов'
+									: 'List of reviews'}
+							</p>
+						</NavLink>
+					</li>
+				)}
 				{!isAuth && (
 					<li className='flex items-center gap-1' onClick={openModal}>
 						<div className='w-8'>
@@ -76,7 +82,9 @@ const Menu: FC<MenuProps> = ({
 						<div className='w-8'>
 							<img src={ExitIcon} alt='admin' className='w-7' />
 						</div>
-						<p className='text-dark-blue font-medium font-poppins'>{language === Languages.ru ? 'Выйти' : 'Exit'}</p>
+						<p className='text-dark-blue font-medium font-poppins'>
+							{language === Languages.ru ? 'Выйти' : 'Exit'}
+						</p>
 					</li>
 				)}
 			</ul>

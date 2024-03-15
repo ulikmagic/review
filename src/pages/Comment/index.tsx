@@ -54,7 +54,9 @@ const Comment: FC = () => {
 						<img src={CommentIcon} alt='comment' className='w-10 mr-0' />
 					</div>
 					<h1 className='text-lg font-rubik font-medium text-dark-blue mb-3 text-center'>
-						{language === Languages.ru ? 'Пожалуйста, оставьте душевный отзыв' : 'Please, leave a soulful review'}
+						{language === Languages.ru
+							? 'Пожалуйста, оставьте душевный отзыв'
+							: 'Please, leave a soulful review'}
 					</h1>
 					<p className='font-poppins mb-1'>
 						<span>{comment?.length || 0}</span>/300
@@ -70,11 +72,7 @@ const Comment: FC = () => {
 						`}
 					></textarea>
 					{comment?.length > 3 && (
-						<ArrowBtn
-							path='/review-list'
-							onClick={sendReview}
-							className='mt-3'
-						/>
+						<ArrowBtn path='/finish' onClick={sendReview} className='mt-3' />
 					)}
 				</div>
 			</div>

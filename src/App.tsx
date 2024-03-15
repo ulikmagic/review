@@ -1,5 +1,5 @@
 import { FC, useEffect } from 'react'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import ReviewList from './pages/ReviewList'
 import Header from './components/Header'
@@ -14,10 +14,13 @@ import Loader from './components/UI/Loader'
 import Popup from './components/UI/Popup'
 import { Languages } from './types/language'
 import { changeLanguage } from './store/features/language.slice'
+import Finish from './pages/Finish'
+import Redirect from './components/Redirect'
 
 const App: FC = () => {
 	const dispatch = useAppDispatch()
 	const isLoader = useAppSelector(state => state.loader.isLoader)
+	const isAuth = useAppSelector(state => state.admin.isAuth)
 
 	useEffect(() => {
 		const data = LocalStorage.getData('review')
@@ -35,7 +38,7 @@ const App: FC = () => {
 
 	useEffect(() => {
 		const language: Languages | null = LocalStorage.getData('language')
-		if(language) {
+		if (language) {
 			dispatch(changeLanguage(language))
 		}
 	}, [dispatch])
@@ -54,7 +57,11 @@ const App: FC = () => {
 					<Route path='/professionalism' element={<Professionalism />} />
 					<Route path='/comfort-level' element={<СomfortLevel />} />
 					<Route path='/comment' element={<Comment />} />
-					<Route path='/review-list' element={<ReviewList />} />
+					<Route path='/finish' element={<Finish />} />
+					<Route
+						path='/review-list'
+						element={isAuth ? <ReviewList /> : <Redirect />}
+					/>
 				</Routes>
 			</Router>
 		</div>

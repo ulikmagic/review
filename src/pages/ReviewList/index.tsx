@@ -48,7 +48,9 @@ const ReviewList: FC = () => {
 					<Loader className='w-14 h-14 m-auto mt-10' />
 				) : list.length === 0 ? (
 					<h1 className='text-lg font-rubik text-center text-dark-blue'>
-						{language === Languages.ru ? 'Ничего не найдено...' : 'Nothing found...'}
+						{language === Languages.ru
+							? 'Ничего не найдено...'
+							: 'Nothing found...'}
 					</h1>
 				) : (
 					<List list={list} remove={removeReview} openModal={setModalComment} />

@@ -41,11 +41,10 @@ const AuthModal: FC<AuthModalProps> = ({ close }) => {
 		if (form.username === 'admin' && form.password === '1204admin') {
 			dispatch(setIsAuth(true))
 			LocalStorage.setData(true, 'isAuth')
-		}
-		setTimeout(() => {
-			dispatch(setIsLoader(false))
 			navigate('/review-list')
-		}, 1500)
+		}
+
+		dispatch(setIsLoader(false))
 	}
 
 	return (
@@ -62,11 +61,13 @@ const AuthModal: FC<AuthModalProps> = ({ close }) => {
 				&#10006;
 			</button>
 			<h1 className='text-lg font-poppins font-bold text-dark-blue mt-2'>
-				{language === Languages.ru ? 'Админка для Мэры' : 'Admin for Mary'}
+				{language === Languages.ru ? 'Админка для Мэри' : 'Admin for Mary'}
 			</h1>
 			<div className='flex flex-col gap-3 mt-3'>
 				<div>
-					<label className={labelClass}>{language === Languages.ru ? 'Логин' : 'Username'}</label>
+					<label className={labelClass}>
+						{language === Languages.ru ? 'Логин' : 'Username'}
+					</label>
 					<input
 						type='text'
 						value={form.username}
@@ -75,7 +76,9 @@ const AuthModal: FC<AuthModalProps> = ({ close }) => {
 					/>
 				</div>
 				<div>
-					<label className={labelClass}>{language === Languages.ru ? 'Пароль' : 'Password'}</label>
+					<label className={labelClass}>
+						{language === Languages.ru ? 'Пароль' : 'Password'}
+					</label>
 					<input
 						type='password'
 						className={inputClass}

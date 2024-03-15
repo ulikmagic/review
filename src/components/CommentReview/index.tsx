@@ -21,11 +21,15 @@ const CommentReview: FC<CommentReviewProps> = ({ close, review }) => {
 			<div className='pt-9 px-4 pb-7 flex flex-col gap-2'>
 				<div className='flex flex-col items-center text-center gap-1'>
 					<p className='text-md font-rubik text-dark-blue font-medium'>
-						{language === Languages.ru ? 'Как изменилось ваше психическое состояние во время/после работы с Мэри?' : 'How did your mental state change during/after working with Mary?'}
+						{language === Languages.ru
+							? 'Как изменилось ваше психическое состояние во время/после работы с Мэри?'
+							: 'How did your mental state change during/after working with Mary?'}
 					</p>
 					<div className='flex items-center gap-2'>
 						<p className='text-md font-poppins'>
-							<strong>{language === Languages.ru ? 'Ответ' : 'Answer'}: </strong>
+							<strong>
+								{language === Languages.ru ? 'Ответ' : 'Answer'}:{' '}
+							</strong>
 							{language === Languages.ru ? feel?.text : feel?.english_text}
 						</p>
 						<img src={feel?.emoji} alt='emoji' className='w-7 h-7' />
@@ -34,7 +38,10 @@ const CommentReview: FC<CommentReviewProps> = ({ close, review }) => {
 				<div className='h-0.5 w-full bg-dark-blue' />
 				<div className='flex items-center gap-2'>
 					<p className='text-md font-rubik text-dark-blue font-medium'>
-						{language === Languages.ru ? 'Профессионализм психолога' : 'Rate professional qualities of the psychologist'}:
+						{language === Languages.ru
+							? 'Профессионализм психолога'
+							: 'Rate professional qualities of the psychologist'}
+						:
 					</p>
 					<div className='flex items-center'>
 						<p className='text-md font-poppins'>
@@ -45,7 +52,10 @@ const CommentReview: FC<CommentReviewProps> = ({ close, review }) => {
 				</div>
 				<div className='flex items-center gap-2'>
 					<p className='text-md font-rubik text-dark-blue font-medium'>
-						{language === Languages.ru ? 'Насколько кофортно вы чувствовали себя в работе с Мэри' : 'How comfortable did you feel working with Mary?'}:
+						{language === Languages.ru
+							? 'Насколько кофортно вы чувствовали себя в работе с Мэри'
+							: 'How comfortable did you feel working with Mary?'}
+						:
 					</p>
 					<div className='flex items-center'>
 						<p className='text-md font-poppins'>
